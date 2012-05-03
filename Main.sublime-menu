@@ -1,0 +1,38 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Liquid",
+                        "children":
+                        [
+                            {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/Liquid/Settings/HTML (Liquid).sublime-settings"
+                                },
+                                "caption": "Settings (HTML) – Default"
+                            },
+                            {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/User/HTML (Liquid).sublime-settings"
+                                },
+                                "caption": "Settings (HTML) – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

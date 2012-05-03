@@ -1,0 +1,73 @@
+{
+    "name": "HTML (Liquid)",
+    "scopeName": "text.html.liquid",
+    "fileTypes": ["liquid"],
+    "patterns": [
+        {
+            "name": "comment.block.liquid",
+            "begin": "{% comment %}",
+            "end": "{% endcomment %}"
+        },
+        {
+            "name": "storage.type.variable.liquid",
+            "begin": "{{",
+            "captures": {
+                "0": { "name": "entity.tag.tagbraces.liquid" }
+            },
+            "end": "}}",
+            "patterns": [
+                { "include": "#template_filter" }
+            ]
+        },
+        {
+            "name": "storage.type.templatetag.liquid",
+            "begin": "{%",
+            "captures": {
+                "0": { "name": "entity.tag.tagbraces.liquid" }
+            },
+            "end": "%}",
+            "patterns": [
+                { "include": "#template_tag" },
+                { "include": "#template_filter" }
+            ]
+        },
+        {
+            "include": "text.html.basic"
+        }
+    ],
+    "repository": {
+        "template_filter": {
+            "patterns": [
+                {
+                    "name": "keyword.control.filter.liquid",
+                    "match": "(plus|asset_url|camelize|capitalize|default_pagination|global_asset_url|handleize|img_tag|link_to|link_to_vendor|link_to_type|link_to_tag|link_to_add_tag|link_to_remove_tag|highlight_active_tag|money_with_currency|money_without_currency|money|pluralize|product_img_url|script_tag|stylesheet_tag|url_for_type|url_for_vendor|weight_with_unit|within|escape|append|prepend|size|join|downcase|upcase|strip_html|strip_newlines|truncate|truncatewords|date|first|last|newline_to_br|replace|replace_first|remove|remove_first|plus|minus|times|divided_by|split|json)\\b"
+                },
+                {
+                    "name": "storage.type.attr.liquid",
+                    "begin": ":\"|\"",
+                    "end": "\""
+                },
+                {
+                    "name": "string.unquoted.filter-pipe.liquid",
+                    "match": "\\|"
+                },
+                {
+                    "name": "string.unquoted.tag-string.liquid",
+                    "match": "[a-zA-Z_.]+"
+                }
+            ]
+        },
+        "template_tag": {
+            "patterns": [
+                {
+                    "name": "keyword.control.tag-name.liquid",
+                    "match": "\\b(for|endfor|if|elsif|endif|cycle|unless|endunless|assign|capture|endcapture|include|tablerow|endtablerow|case|when|endcase|raw|endraw)\\b"
+                },
+                {
+                    "name": "keyword.operator.liquid",
+                    "match": "\\b(and|or|not|contains|in)\\b"
+                }
+            ]
+        }
+    }
+}
