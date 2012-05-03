@@ -17,3 +17,10 @@ Installation
  - Linux: ~/.config/sublime-text-2/Packages
 
 Or use PackageControl.
+
+Upcoming Milestones
+-------------------
+
+1. Better syntax coloring
+2. Better snippets
+3. CSS and JS Liquid support [with validation]
