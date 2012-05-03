@@ -1,7 +1,0 @@
-<!-- See http://www.sublimetext.com/docs/snippets for more information -->
-<snippet>
-    <content><![CDATA[def ${1:VIEWNAME}(request):]]></content>
-    <tabTrigger>view</tabTrigger>
-    <scope>source.python</scope>
-    <description>View</description>
-</snippet>
