@@ -21,18 +21,10 @@
 			<dict>
 				<key>begin</key>
 				<string>{{</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>punctuation.braces.liquid</string>
-					</dict>
-				</dict>
 				<key>end</key>
 				<string>}}</string>
 				<key>name</key>
-				<string>storage.type.variable.liquid</string>
+				<string>meta.type.variable.liquid</string>
 				<key>patterns</key>
 				<array>
 					<dict>
@@ -43,34 +35,26 @@
 			</dict>
 			<dict>
 				<key>begin</key>
-				<string>{%\s*(cycle|include|tablerow|case|when|raw|form)</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>keyword.tag.tagbraces.liquid</string>
-					</dict>
-				</dict>
+				<string>{%</string>
 				<key>end</key>
 				<string>%}</string>
 				<key>name</key>
-				<string>storage.type.templatetag.liquid</string>
+				<string>punctuation.type.variable.liquid</string>
 				<key>patterns</key>
 				<array>
 					<dict>
 						<key>include</key>
-						<string>#template_tag</string>
+						<string>#template_tag_name</string>
 					</dict>
 					<dict>
 						<key>include</key>
-						<string>#template_filter</string>
+						<string>#template_var</string>
 					</dict>
 				</array>
 			</dict>
 			<dict>
 				<key>begin</key>
-				<string>{%\s*capture</string>
+				<string>{%\s*(capture)\s*%}</string>
 				<key>captures</key>
 				<dict>
 					<key>0</key>
@@ -80,11 +64,15 @@
 					</dict>
 				</dict>
 				<key>end</key>
-				<string>%}</string>
+				<string>{%\s*endcapture\s*%}</string>
 				<key>name</key>
 				<string>storage.type.templatetag.liquid</string>
 				<key>patterns</key>
 				<array>
+					<dict>
+						<key>include</key>
+						<string>#template_var</string>
+					</dict>
 					<dict>
 						<key>include</key>
 						<string>#template_tag</string>
@@ -113,37 +101,7 @@
 				<key>patterns</key>
 				<array>
 					<dict>
-						<key>begin</key>
-						<string>\(</string>
-						<key>captures</key>
-						<dict>
-							<key>0</key>
-							<dict>
-								<key>name</key>
-								<string>punctuation.separator.loopindex.liquid</string>
-							</dict>
-						</dict>
-						<key>end</key>
-						<string>\)</string>
-						<key>name</key>
-						<string>storage.type.fortag.liquid</string>
-						<key>patterns</key>
-						<array>
-							<dict>
-								<key>match</key>
-								<string>(\.\.)</string>
-								<key>name</key>
-								<string>keyword.operator.logical.liquid</string>
-							</dict>
-							<dict>
-								<key>include</key>
-								<string>#assign_op</string>
-							</dict>
-							<dict>
-								<key>include</key>
-								<string>#template_var</string>
-							</dict>
-						</array>
+						
 					</dict>
 					<dict>
 						<key>match</key>
@@ -154,41 +112,6 @@
 					<dict>
 						<key>include</key>
 						<string>#template_var</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>begin</key>
-				<string>{%\s*(if|elsif|unless)</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>keyword.tag.liquid</string>
-					</dict>
-				</dict>
-				<key>end</key>
-				<string>%}</string>
-				<key>name</key>
-				<string>storage.type.logictag.liquid</string>
-				<key>patterns</key>
-				<array>
-					<dict>
-						<key>include</key>
-						<string>#logic_op</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_var</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_tag</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_filter</string>
 					</dict>
 				</array>
 			</dict>
@@ -221,7 +144,7 @@
 			</dict>
 			<dict>
 				<key>match</key>
-				<string>{%\s*(endfor|endif|else|endunless|endtablerow|endcase|endraw|endcapture|endform)\s*%}</string>
+				<string>({%)?(?=\s*)(?![\.0-9])[a-zA-Z0-9_-]+(?=\s*)(%})?</string>
 				<key>name</key>
 				<string>keyword.tag.tagbraces.liquid</string>
 			</dict>
@@ -232,10 +155,16 @@
 		</array>
 		<key>repository</key>
 		<dict>
-			<key>template_filter</key>
+			<key>template_tag_name</key>
 			<dict>
 				<key>patterns</key>
 				<array>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;={%)\s*(\w+)</string>
+						<key>name</key>
+						<string>entity.name.tag.liquid</string>
+					</dict>
 				</array>
 			</dict>
 			<key>logic_op</key>
@@ -270,19 +199,25 @@
 						<key>match</key>
 						<string>(false|true)</string>
 						<key>name</key>
-						<string>support.constant.property-value</string>
+						<string>constant.language.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\|\s+(?![\.0-9])[a-zA-Z0-9_-]+:\s+\b</string>
+						<string>\s+(and|or|not|contains|in|((\!|\=|&lt;|&gt;)\=))\s+</string>
 						<key>name</key>
-						<string>keyword.method.with-arguments.liquid</string>
+						<string>keyword.operator.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\|\s+(?![\.0-9])[a-zA-Z0-9_-]+\s+\b</string>
+						<string>\|\s+(?![\.0-9])[a-zA-Z0-9_-]+\:\s+</string>
 						<key>name</key>
-						<string>keyword.method.with-arguments.liquid</string>
+						<string>support.function.with-args.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>\|\s+(?![\.0-9])[a-zA-Z0-9_-]+\s+</string>
+						<key>name</key>
+						<string>support.function.without-args.liquid</string>
 					</dict>
 					<dict>
 						<key>begin</key>
@@ -290,54 +225,55 @@
 						<key>end</key>
 						<string>"</string>
 						<key>name</key>
+						<string>string.quoted.double.liquid</string>
+					</dict>
+					<dict>
+						<key>begin</key>
+						<string>'</string>
+						<key>end</key>
+						<string>'</string>
+						<key>name</key>
 						<string>string.quoted.single.liquid</string>
-					</dict>
-					<dict>
-						<key>match</key>
-						<string>(\[|\.)+((?![\.0-9])[a-zA-Z0-9_-]+)(\]|\.)+</string>
-						<key>name</key>
-						<string>support.type.property-name.liquid</string>
-					</dict>
-					<dict>
-						<key>captures</key>
-						<dict>
-							<key>1</key>
-							<dict>
-								<key>name</key>
-								<string>entity.other.attribute-name.class.liquid</string>
-							</dict>
-							<key>2</key>
-							<dict>
-								<key>name</key>
-								<string>punctuation.separator.variable.liquid</string>
-							</dict>
-							<key>3</key>
-							<dict>
-								<key>name</key>
-								<string>support.type.property-name.liquid</string>
-							</dict>
-							<key>4</key>
-							<dict>
-								<key>name</key>
-								<string>punctuation.separator.variable.liquid</string>
-							</dict>
-						</dict>
-						<key>match</key>
-						<string>\[((?![\.0-9])[a-zA-Z0-9_-]+)\]</string>
-						<key>name</key>
-						<string>variable.array-index-name.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
 						<string>(-|\+)?\s*[0-9]+(\.[0-9]+)?</string>
 						<key>name</key>
-						<string>constant.numeric.css</string>
+						<string>constant.numeric.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>((?![\.0-9])[a-zA-Z0-9_-]+)</string>
+						<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment)\b</string>
 						<key>name</key>
-						<string>punctuation.definition.variable.liquid</string>
+						<string>support.class.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;=\:\s)(\w+)(?=\s*\|)</string>
+						<key>end</key>
+						<string>\]</string>
+						<key>name</key>
+						<string>variable.parameter.filter-arg.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>\[(\w+)\]</string>
+						<key>end</key>
+						<string>\]</string>
+						<key>name</key>
+						<string>variable.other.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;=\.)\w+\b</string>
+						<key>name</key>
+						<string>entity.other.attribute-name.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>\w+</string>
+						<key>name</key>
+						<string>variable.other.liquid</string>
 					</dict>
 				</array>
 			</dict>
