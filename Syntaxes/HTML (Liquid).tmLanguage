@@ -220,6 +220,14 @@
 						<string>support.function.without-args.liquid</string>
 					</dict>
 					<dict>
+						<key>match</key>
+						<string>(?&lt;=\[)(\w+)\.(\w+)(?=\])</string>
+						<key>end</key>
+						<string>\]</string>
+						<key>name</key>
+						<string>invalid.illegal.liquid</string>
+					</dict>
+					<dict>
 						<key>begin</key>
 						<string>"</string>
 						<key>end</key>
@@ -257,17 +265,17 @@
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\[(\w+)\]</string>
+						<string>(?&lt;=\[)(\w+)(?=\])</string>
 						<key>end</key>
 						<string>\]</string>
 						<key>name</key>
-						<string>variable.other.liquid</string>
+						<string>support.variable.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
 						<string>(?&lt;=\.)\w+\b</string>
 						<key>name</key>
-						<string>entity.other.attribute-name.liquid</string>
+						<string>support.variable.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
