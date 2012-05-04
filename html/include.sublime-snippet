@@ -1,7 +1,7 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
-	<content><![CDATA[{% include ${1:"$2"} %}]]></content>
+    <content><![CDATA[{% include $1${2: with: $3} %}]]></content>
     <tabTrigger>include</tabTrigger>
-    <scope>text.html.django</scope>
+    <scope>text.html.liquid</scope>
     <description>include</description>
 </snippet>

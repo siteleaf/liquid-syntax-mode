@@ -1,7 +1,7 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
-	<content><![CDATA[{% else %}]]></content>
-    <tabTrigger>else</tabTrigger>
+    <content><![CDATA[{% endif %}]]></content>
+    <tabTrigger>endif</tabTrigger>
     <scope>text.html.liquid</scope>
-    <description>else</description>
+    <description>endif</description>
 </snippet>
