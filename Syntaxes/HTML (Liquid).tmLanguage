@@ -219,6 +219,19 @@
 						<key>name</key>
 						<string>support.function.without-args.liquid</string>
 					</dict>
+					<!-- tag modifiers -->
+					<dict>
+						<key>match</key>
+						<string>(?&lt;=\s)((with|offset|limit)\:)(?=\s)</string>
+						<key>name</key>
+						<string>keyword.control.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;=\s)(\w+\:)(?=\:\s)</string>
+						<key>name</key>
+						<string>invalid.illegal.liquid</string>
+					</dict>
 					<dict>
 						<key>match</key>
 						<string>(?&lt;=\[)(\w+)\.(\w+)(?=\])</string>
@@ -251,23 +264,19 @@
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment)\b</string>
+						<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment|forloop)\b</string>
 						<key>name</key>
 						<string>support.class.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>(?&lt;=\:\s)(\w+)(?=\s*\|)</string>
-						<key>end</key>
-						<string>\]</string>
+						<string>((?&lt;=\w\:\s)\w+)</string>
 						<key>name</key>
-						<string>variable.parameter.filter-arg.liquid</string>
+						<string>variable.parameter.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
 						<string>(?&lt;=\[)(\w+)(?=\])</string>
-						<key>end</key>
-						<string>\]</string>
 						<key>name</key>
 						<string>support.variable.liquid</string>
 					</dict>
