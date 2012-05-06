@@ -222,9 +222,15 @@
 					<!-- tag modifiers -->
 					<dict>
 						<key>match</key>
-						<string>(?&lt;=\s)((with|offset|limit)\:)(?=\s)</string>
+						<string>(?&lt;=\s)(with|offset\:|limit\:)(?=\s)</string>
 						<key>name</key>
 						<string>keyword.control.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;=\s)(with\:|offset|limit)(?=\s)</string>
+						<key>name</key>
+						<string>invalid.illegal.argument.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
