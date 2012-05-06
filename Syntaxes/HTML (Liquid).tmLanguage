@@ -53,102 +53,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>begin</key>
-				<string>{%\s*(capture)\s*%}</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>keyword.tag.liquid</string>
-					</dict>
-				</dict>
-				<key>end</key>
-				<string>{%\s*endcapture\s*%}</string>
-				<key>name</key>
-				<string>storage.type.templatetag.liquid</string>
-				<key>patterns</key>
-				<array>
-					<dict>
-						<key>include</key>
-						<string>#template_var</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_tag</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_filter</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>begin</key>
-				<string>{%\s*for</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>keyword.tag.liquid</string>
-					</dict>
-				</dict>
-				<key>end</key>
-				<string>%}</string>
-				<key>name</key>
-				<string>storage.type.logictag.liquid</string>
-				<key>patterns</key>
-				<array>
-					<dict>
-						
-					</dict>
-					<dict>
-						<key>match</key>
-						<string>\s+in\s+</string>
-						<key>name</key>
-						<string>keyword.operator.logical.liquid</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_var</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>begin</key>
-				<string>{%\s*assign</string>
-				<key>captures</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>name</key>
-						<string>keyword.tag.liquid</string>
-					</dict>
-				</dict>
-				<key>end</key>
-				<string>%}</string>
-				<key>name</key>
-				<string>storage.type.assigntag.liquid</string>
-				<key>patterns</key>
-				<array>
-					<dict>
-						<key>include</key>
-						<string>#assign_op</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#template_var</string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>match</key>
-				<string>({%)?(?=\s*)(?![\.0-9])[a-zA-Z0-9_-]+(?=\s*)(%})?</string>
-				<key>name</key>
-				<string>keyword.tag.tagbraces.liquid</string>
-			</dict>
-			<dict>
 				<key>include</key>
 				<string>text.html.basic</string>
 			</dict>
@@ -195,6 +99,19 @@
 			<dict>
 				<key>patterns</key>
 				<array>
+					<!-- syntax within brackets -->
+					<dict>
+						<key>captures</key>
+						<dict>
+							<key>2</key>
+							<dict>
+								<key>name</key>
+								<string>invalid.illegal.filter.liquid</string>
+							</dict>
+						</dict>
+						<key>match</key>
+						<string>(?&lt;=\[)(\w+\.?)+.*(\s*\|[^\]]*)(?=\])</string>
+					</dict>
 					<dict>
 						<key>match</key>
 						<string>(false|true)</string>
@@ -283,12 +200,6 @@
 						<string>((?&lt;=\w\:\s)\w+)</string>
 						<key>name</key>
 						<string>variable.parameter.liquid</string>
-					</dict>
-					<dict>
-						<key>match</key>
-						<string>(?&lt;=\[)(\w+)(?=\])</string>
-						<key>name</key>
-						<string>support.variable.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
