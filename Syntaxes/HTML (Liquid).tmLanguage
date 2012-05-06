@@ -233,14 +233,6 @@
 						<string>invalid.illegal.liquid</string>
 					</dict>
 					<dict>
-						<key>match</key>
-						<string>(?&lt;=\[)(\w+)\.(\w+)(?=\])</string>
-						<key>end</key>
-						<string>\]</string>
-						<key>name</key>
-						<string>invalid.illegal.liquid</string>
-					</dict>
-					<dict>
 						<key>begin</key>
 						<string>"</string>
 						<key>end</key>
