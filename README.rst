@@ -21,6 +21,6 @@ Or use PackageControl.
 Upcoming Milestones
 -------------------
 
-1. Better syntax coloring
+1. Fix tab completion
 2. Better snippets
 3. CSS and JS Liquid support [with validation]
