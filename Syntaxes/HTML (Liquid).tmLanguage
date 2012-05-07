@@ -191,7 +191,7 @@
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment|forloop)\b</string>
+						<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment|forloop|settings)\b</string>
 						<key>name</key>
 						<string>support.class.liquid</string>
 					</dict>
