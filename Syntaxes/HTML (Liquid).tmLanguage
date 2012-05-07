@@ -120,7 +120,7 @@
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\s+(and|or|not|contains|in|((\!|\=|&lt;|&gt;)\=))\s+</string>
+						<string>\s+(and|or|not|contains|in|by|((\!|\=|&lt;|&gt;)\=))\s+</string>
 						<key>name</key>
 						<string>keyword.operator.liquid</string>
 					</dict>
