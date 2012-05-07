@@ -114,6 +114,12 @@
 					</dict>
 					<dict>
 						<key>match</key>
+						<string>(?&lt;=\s)(\+|\-|\/|\*)(?=\s)</string>
+						<key>name</key>
+						<string>invalid.illegal.filter.liquid</string>
+					</dict>
+					<dict>
+						<key>match</key>
 						<string>(false|true)</string>
 						<key>name</key>
 						<string>constant.language.liquid</string>
