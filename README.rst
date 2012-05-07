@@ -22,5 +22,6 @@ Upcoming Milestones
 -------------------
 
 1. Fix tab completion
-2. Better snippets
-3. CSS and JS Liquid support [with validation]
+2. Code suggest
+3. Better snippets
+4. CSS and JS Liquid support [with validation]
