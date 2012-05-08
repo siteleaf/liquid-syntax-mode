@@ -112,11 +112,25 @@
 						<key>match</key>
 						<string>(?&lt;=\[)(\w+\.?)+.*(\s*\|[^\]]*)(?=\])</string>
 					</dict>
+					<!--- plus, minus, divide and multiply used as filters --->
 					<dict>
 						<key>match</key>
 						<string>(?&lt;=\s)(\+|\-|\/|\*)(?=\s)</string>
 						<key>name</key>
 						<string>invalid.illegal.filter.liquid</string>
+					</dict>
+					<!-- in used in if tag -->
+					<dict>
+						<key>captures</key>
+						<dict>
+							<key>1</key>
+							<dict>
+								<key>name</key>
+								<string>invalid.illegal.operator.liquid</string>
+							</dict>
+						</dict>
+						<key>match</key>
+						<string>(?&lt;=if).*\b(in)</string>
 					</dict>
 					<dict>
 						<key>match</key>
@@ -223,6 +237,8 @@
 			</dict>
 		</dict>
 		<key>scopeName</key>
-		<string>text.html.liquid</string>
+		<string>source.liquid</string>
+		<key>uuid</key>
+		<string>f2a39460-98fd-11e1-a8b0-0800200c9a66</string>
 	</dict>
 </plist>
