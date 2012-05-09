@@ -103,14 +103,14 @@
 					<dict>
 						<key>captures</key>
 						<dict>
-							<key>2</key>
+							<key>1</key>
 							<dict>
 								<key>name</key>
 								<string>invalid.illegal.filter.liquid</string>
 							</dict>
 						</dict>
 						<key>match</key>
-						<string>(?&lt;=\[)(\w+\.?)+.*(\s*\|[^\]]*)(?=\])</string>
+						<string>\[.*(\|.*)([^\]])\]</string>
 					</dict>
 					<!--- plus, minus, divide and multiply used as filters --->
 					<dict>
@@ -134,13 +134,13 @@
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>(false|true)</string>
+						<string>(false|true|nil)</string>
 						<key>name</key>
 						<string>constant.language.liquid</string>
 					</dict>
 					<dict>
 						<key>match</key>
-						<string>\s+(and|or|not|contains|in|by|((\!|\=|&lt;|&gt;)\=))\s+</string>
+						<string>\s+(and|or|not|contains|in|by|((\!|\=|\&lt;|\&gt;)\=))\s+</string>
 						<key>name</key>
 						<string>keyword.operator.liquid</string>
 					</dict>
@@ -176,10 +176,16 @@
 						<string>keyword.control.liquid</string>
 					</dict>
 					<dict>
+						<key>captures</key>
+						<dict>
+							<key>2</key>
+							<dict>
+								<key>name</key>
+								<string>invalid.illegal.argument.liquid</string>
+							</dict>
+						</dict>
 						<key>match</key>
-						<string>(?&lt;=\s)(with\:|offset|limit)(?=\s)</string>
-						<key>name</key>
-						<string>invalid.illegal.argument.liquid</string>
+						<string>(?&lt;=include)(.*)(with\:|offset|limit)(?=\s)</string>
 					</dict>
 					<dict>
 						<key>match</key>
