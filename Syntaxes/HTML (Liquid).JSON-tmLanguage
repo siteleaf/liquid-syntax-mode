@@ -1,6 +1,6 @@
 {
     "name": "HTML (Liquid)",
-    "scopeName": "text.html.liquid",
+    "scopeName": "source.liquid",
     "fileTypes": ["liquid"],
     "patterns": [
         {

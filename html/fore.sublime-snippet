@@ -8,6 +8,6 @@
 {% endfor %}
 ]]>	</content>
     <tabTrigger>fore</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>for... empty...</description>
 </snippet>

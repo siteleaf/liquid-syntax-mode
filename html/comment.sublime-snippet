@@ -6,6 +6,6 @@
 }{% endcomment %}
 ]]>	</content>
     <tabTrigger>comment</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>comment</description>
 </snippet>

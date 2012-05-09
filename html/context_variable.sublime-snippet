@@ -2,6 +2,6 @@
 <snippet>
 	<content><![CDATA[{{ $1 }}]]></content>
     <tabTrigger>var</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>context variable (var)</description>
 </snippet>

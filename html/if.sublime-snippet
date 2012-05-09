@@ -6,6 +6,6 @@
 {% endif %}
 ]]>	</content>
     <tabTrigger>if</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>if</description>
 </snippet>

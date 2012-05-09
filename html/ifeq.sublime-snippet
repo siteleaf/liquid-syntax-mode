@@ -6,6 +6,6 @@
 {% endifequal %}
 ]]>	</content>
     <tabTrigger>ifeq</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>ifequal (ifeq)</description>
 </snippet>

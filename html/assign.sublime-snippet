@@ -2,6 +2,6 @@
 <snippet>
     <content><![CDATA[{% assign $1 = $2 %}]]></content>
     <tabTrigger>assign</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>assign</description>
 </snippet>

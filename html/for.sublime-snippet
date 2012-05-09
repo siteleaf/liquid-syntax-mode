@@ -6,6 +6,6 @@
 {% endfor %}
 ]]>	</content>
     <tabTrigger>for</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>for</description>
 </snippet>

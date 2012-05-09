@@ -8,6 +8,6 @@
 {% endif %}
 ]]>	</content>
     <tabTrigger>ifelse</tabTrigger>
-    <scope>text.html.liquid</scope>
+    <scope>source.liquid</scope>
     <description>if... else...</description>
 </snippet>
