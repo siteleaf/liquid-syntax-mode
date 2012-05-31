@@ -1,0 +1,31 @@
+TAGS
+    logic tags
+        with conditions
+            (if,elsif,unless)
+        without conditions
+            (else, endif, endunless)
+    flow control
+        for,endfor
+    form tags
+        form
+        endform
+    assignment
+        assign
+    capture
+    tags within tags
+    includes
+
+    if (blah or blah) and (blah) or blah and [not blah]
+
+VARIABLES
+    arrays
+    built-in objects
+
+FUNCTIONS
+    with arguments
+    without arguments
+    optional arguments
+
+OPERATORS
+
+CONSTANTS

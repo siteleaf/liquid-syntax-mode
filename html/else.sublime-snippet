@@ -2,6 +2,6 @@
 <snippet>
 	<content><![CDATA[{% else %}]]></content>
     <tabTrigger>else</tabTrigger>
-    <scope>source.liquid</scope>
+    <scope>text.html.liquid</scope>
     <description>else</description>
 </snippet>

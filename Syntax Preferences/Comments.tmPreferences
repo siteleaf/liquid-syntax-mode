@@ -5,7 +5,7 @@
     <key>name</key>
     <string>Preferences</string>
     <key>scope</key>
-    <string>source.liquid</string>
+    <string>text.html.liquid</string>
     <key>settings</key>
     <dict>
         <key>shellVariables</key>

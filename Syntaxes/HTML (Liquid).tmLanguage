@@ -6,15 +6,19 @@
 		<array>
 			<string>liquid</string>
 		</array>
+		<key>foldingStartMarker</key>
+		<string>(?x){%\s*(if|unless|for|paginate|capture|form|case|tablerow|raw|comment)[^(%})]+%}</string>
+		<key>foldingStopMarker</key>
+		<string>(?x){%\s*(endif|endunless|endfor|endpaginate|endcapture|endform|endcase|endtablerow|endraw|endcomment)[^(%})]+%}</string>
 		<key>name</key>
 		<string>HTML (Liquid)</string>
 		<key>patterns</key>
 		<array>
 			<dict>
 				<key>begin</key>
-				<string>{% comment %}</string>
+				<string>{%\s*comment\s*%}</string>
 				<key>end</key>
-				<string>{% endcomment %}</string>
+				<string>{%\s*endcomment\s*%}</string>
 				<key>name</key>
 				<string>comment.block.liquid</string>
 			</dict>
@@ -24,7 +28,7 @@
 				<key>end</key>
 				<string>}}</string>
 				<key>name</key>
-				<string>meta.type.variable.liquid</string>
+				<string>punctuation.output.liquid</string>
 				<key>patterns</key>
 				<array>
 					<dict>
@@ -39,7 +43,7 @@
 				<key>end</key>
 				<string>%}</string>
 				<key>name</key>
-				<string>punctuation.type.variable.liquid</string>
+				<string>punctuation.tag.liquid</string>
 				<key>patterns</key>
 				<array>
 					<dict>
@@ -77,13 +81,25 @@
 				<array>
 					<dict>
 						<key>match</key>
-						<string>\s+(and|or|not|contains|((\!|\=|&lt;|&gt;)\=))\s+</string>
+						<string>\s+(and|or|not|contains|(\!\=|\=\=|&lt;\=|&gt;\=|&lt;|&gt;)\s+</string>
 						<key>name</key>
 						<string>keyword.operator.logical.liquid</string>
 					</dict>
 				</array>
 			</dict>
 			<key>assign_op</key>
+			<dict>
+				<key>patterns</key>
+				<array>
+					<dict>
+						<key>match</key>
+						<string>/=</string>
+						<key>name</key>
+						<string>keyword.operator.assignment.augmented.liquid</string>
+					</dict>
+				</array>
+			</dict>
+			<key>logic_expression</key>
 			<dict>
 				<key>patterns</key>
 				<array>
@@ -103,14 +119,19 @@
 					<dict>
 						<key>captures</key>
 						<dict>
-							<key>1</key>
+							<key>2</key>
+							<dict>
+								<key>name</key>
+								<string>invalid.illegal.filter.liquid</string>
+							</dict>
+							<key>3</key>
 							<dict>
 								<key>name</key>
 								<string>invalid.illegal.filter.liquid</string>
 							</dict>
 						</dict>
 						<key>match</key>
-						<string>\[.*(\|.*)([^\]])\]</string>
+						<string>(\[)(\|)(?=[^\]]*)(?=\])</string>
 					</dict>
 					<!--- plus, minus, divide and multiply used as filters --->
 					<dict>
@@ -119,24 +140,24 @@
 						<key>name</key>
 						<string>invalid.illegal.filter.liquid</string>
 					</dict>
+					<dict>
+						<key>match</key>
+						<string>(false|true|nil)</string>
+						<key>name</key>
+						<string>constant.language.liquid</string>
+					</dict>
 					<!-- in used in if tag -->
 					<dict>
 						<key>captures</key>
 						<dict>
-							<key>1</key>
+							<key>3</key>
 							<dict>
 								<key>name</key>
 								<string>invalid.illegal.operator.liquid</string>
 							</dict>
 						</dict>
 						<key>match</key>
-						<string>(?&lt;=if).*\b(in)</string>
-					</dict>
-					<dict>
-						<key>match</key>
-						<string>(false|true|nil)</string>
-						<key>name</key>
-						<string>constant.language.liquid</string>
+						<string>(?=if|unless|elsif)\s*[^%}]+\s(in)\s</string>
 					</dict>
 					<dict>
 						<key>match</key>
@@ -243,7 +264,7 @@
 			</dict>
 		</dict>
 		<key>scopeName</key>
-		<string>source.liquid</string>
+		<string>text.html.liquid</string>
 		<key>uuid</key>
 		<string>f2a39460-98fd-11e1-a8b0-0800200c9a66</string>
 	</dict>
