@@ -1,8 +1,4 @@
-=========================================
-(Siteleaf) Liquid support for Sublime Text 2
-=========================================
-
-## Overview
+## (Siteleaf) Liquid support for Sublime Text
 
 This is a fork of the [shopify-liquid](https://bitbucket.org/granteagon/shopify-liquid) syntax, which was based off of the Djaniero package for Django.
 
