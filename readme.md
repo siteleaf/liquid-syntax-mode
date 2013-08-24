@@ -9,7 +9,7 @@ This is a fork of the [shopify-liquid](https://bitbucket.org/granteagon/shopify-
 
 Or use PackageControl.
 
-3. You might need to switch to the syntax mode. (`cmd + p`, search for Liquid, "Set Syntax: HTML (Liquid)")
+You might need to switch to the syntax mode. (`cmd + p`, search for Liquid, "Set Syntax: HTML (Liquid)")
 
 
 
