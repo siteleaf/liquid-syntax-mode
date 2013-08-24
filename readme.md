@@ -5,13 +5,13 @@ This is a fork of the [shopify-liquid](https://bitbucket.org/granteagon/shopify-
 ## Installation
 
 1. Clone this repo
-2. Put the contents of this repo directly inside:
-
- - OS X: ~/Library/Application Support/Sublime Text 2/Packages/
- - Windows: %APPDATA%/Sublime Text 2/Packages/
- - Linux: ~/.config/sublime-text-2/Packages
+2. Put the contents of this repo directly inside the Sublime Text packages directory (Submlime Text > Preferences > Browse Packages).
 
 Or use PackageControl.
+
+3. You might need to switch to the syntax mode. (`cmd + p`, search for Liquid, "Set Syntax: HTML (Liquid)")
+
+
 
 ## Autocomplete
 
