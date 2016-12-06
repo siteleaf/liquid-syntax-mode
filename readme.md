@@ -1,17 +1,21 @@
-## (Siteleaf) Liquid support for Sublime Text
+## Siteleaf Liquid support for Sublime Text
 
 This is a fork of the [shopify-liquid](https://bitbucket.org/granteagon/shopify-liquid) syntax, which was based off of the Djaniero package for Django.
 
 ## Installation
 
+**Suggested**: Install using [Package Control](https://packagecontrol.io/). Search for "Siteleaf Liquid Syntax".
+
+**Or** install manually:
+
 1. Clone this repo
 2. Put the contents of this repo directly inside:
 
- - OS X: ~/Library/Application Support/Sublime Text 2/Packages/
- - Windows: %APPDATA%/Sublime Text 2/Packages/
- - Linux: ~/.config/sublime-text-2/Packages
+ - OS X: ~/Library/Application Support/Sublime Text 3/Packages/
+ - Windows: %APPDATA%/Sublime Text 3/Packages/
+ - Linux: ~/.config/sublime-text-3/Packages
 
-Or use PackageControl.
+**After installing:**
 
 You might need to switch to the syntax mode. (`shift + cmd + p`, search for Liquid, "Set Syntax: HTML (Liquid)")
 
