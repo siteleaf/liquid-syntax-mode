@@ -7,9 +7,9 @@
 		<string>liquid</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>(?x){%\s*(if|unless|for|paginate|capture|form|case|tablerow|raw|comment)[^(%})]+%}</string>
+	<string>(?x){%\s*(if|unless|for|paginate|capture|form|case|tablerow|raw|comment|schema)[^(%})]+%}</string>
 	<key>foldingStopMarker</key>
-	<string>(?x){%\s*(endif|endunless|endfor|endpaginate|endcapture|endform|endcase|endtablerow|endraw|endcomment)[^(%})]+%}</string>
+	<string>(?x){%\s*(endif|endunless|endfor|endpaginate|endcapture|endform|endcase|endtablerow|endraw|endcomment|endschema)[^(%})]+%}</string>
 	<key>name</key>
 	<string>HTML (Liquid)</string>
 	<key>patterns</key>
@@ -59,6 +59,10 @@
 		<dict>
 			<key>include</key>
 			<string>text.html.basic</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>source.json</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -240,7 +244,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment|forloop|settings)\b</string>
+					<string>\b(collection|product|linklist|linklists|order|link|customer|customer_address|line_item|shop|collections|page_title|template|image|blog|blogs|cart|pages|theme|themes|variant|items|comment|forloop|settings|schema)\b</string>
 					<key>name</key>
 					<string>support.class.liquid</string>
 				</dict>

@@ -1,0 +1,7 @@
+<!-- See http://www.sublimetext.com/docs/snippets for more information -->
+<snippet>
+	<content><![CDATA[{% schema %}$0{% endschema %}]]>	</content>
+    <tabTrigger>schema</tabTrigger>
+    <scope>text.html.liquid</scope>
+    <description>schema</description>
+</snippet>
