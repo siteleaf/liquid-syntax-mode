@@ -51,4 +51,102 @@ if + tab >>>
 {% $1 %}
 ```
 
+**Assign**
+
+```
+assign + tab >>>
+
+{% assign $1 = $2 %}
+```
+
+**Capture**
+
+```
+capture + tab >>>
+
+{% capture $1 %}$2{% endcapture %}
+```
+
+**Comment**
+
+```
+comment + tab >>>
+
+{% comment %}$0{% endcomment %}
+```
+
+**Context variable**
+
+```
+va + tab >>>
+
+{{ $1 }}
+```
+
+**Cycle**
+
+```
+cycle + tab >>>
+
+{% cycle $1 %}
+```
+
+**Else**
+
+```
+else + tab >>>
+
+{% else %}
+```
+
+**Elsif**
+
+```
+elsif + tab >>>
+
+{% elsif $1 %}
+```
+
+**Endcapture**
+
+```
+endcapture + tab >>>
+
+{% endcapture %}
+```
+
+**Endfor**
+
+```
+endfor + tab >>>
+
+{% endfor %}
+```
+
+**Endif**
+
+```
+endif + tab >>>
+
+{% endif %}
+```
+
+**Endraw**
+
+```
+endraw + tab >>>
+
+{% endraw %}
+```
+
+**For**
+
+```
+for + tab >>>
+
+{% for $1 in $2 %}
+	$3
+{% endfor %}
+```
+
 For a full list, check out the "Snippets" folder.
