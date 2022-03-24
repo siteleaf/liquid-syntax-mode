@@ -1,0 +1,7 @@
+<!-- See http://www.sublimetext.com/docs/snippets for more information -->
+<snippet>
+	<content><![CDATA[{% stylesheet %}$0{% endstylesheet %}]]>	</content>
+    <tabTrigger>stylesheet</tabTrigger>
+    <scope>text.html.liquid</scope>
+    <description>stylesheet</description>
+</snippet>
